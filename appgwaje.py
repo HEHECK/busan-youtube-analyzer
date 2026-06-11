@@ -11,6 +11,18 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
+
+font_path = "NanumBarunGothic.ttf"
+
+font_prop = fm.FontProperties(
+    fname=font_path
+)
+
+plt.rcParams["font.family"] = (
+    font_prop.get_name()
+)
+
+plt.rcParams["axes.unicode_minus"] = False
 import platform
 
 from googleapiclient.discovery import build
@@ -20,18 +32,6 @@ from collections import Counter
 from datetime import datetime
 import re
 
-# ==========================================
-# 한글 폰트 설정
-# ==========================================
-
-if platform.system() == "Windows":
-    plt.rcParams["font.family"] = "Malgun Gothic"
-elif platform.system() == "Darwin":
-    plt.rcParams["font.family"] = "AppleGothic"
-else:
-    plt.rcParams["font.family"] = "NanumGothic"
-
-plt.rcParams["axes.unicode_minus"] = False
 # ==========================================
 # Streamlit 설정
 # ==========================================

@@ -1,0 +1,7 @@
+streamlit
+pandas
+matplotlib
+google-api-python-client
+transformers
+langdetect
+torch

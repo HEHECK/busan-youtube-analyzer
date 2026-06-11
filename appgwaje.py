@@ -14,14 +14,13 @@ import matplotlib.font_manager as fm
 
 font_path = "NanumBarunGothic.ttf"
 
-font_prop = fm.FontProperties(
+fm.fontManager.addfont(font_path)
+
+font_name = fm.FontProperties(
     fname=font_path
-)
+).get_name()
 
-plt.rcParams["font.family"] = (
-    font_prop.get_name()
-)
-
+plt.rcParams["font.family"] = font_name
 plt.rcParams["axes.unicode_minus"] = False
 import platform
 
